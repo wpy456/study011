@@ -64,7 +64,7 @@ class ViewController: UIViewController {
 //        animation.fillMode = kCAFillModeForwards
 //        animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)]
         
-        animation.delegate=self 
+        animation.delegate=self
         animation.duration=5.0
         imageView2.layer.add(animation, forKey: nil)
         
@@ -113,6 +113,13 @@ class ViewController: UIViewController {
 //        view1?.backgroundColor=UIColor.red
 //        view1?.alpha=1
 //        self.view.viewWithTag(1)?.removeFromSuperview()//移除视图
+    }
+    
+    func animationDidStart(_ anim: CAAnimation) {
+        print("开始")
+    }
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        print("结束")
     }
 }
 extension ViewController: CAAnimationDelegate {
